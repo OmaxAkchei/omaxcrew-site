@@ -1,0 +1,284 @@
+:root {
+  /* Cores */
+  --amarelo-omax: #ffd700;
+  --roxo-omax:    #3b0a55;
+  --texto-escuro: #1a1a1a;
+  --texto-claro:  #fafafa;
+
+  /* Espaçamentos */
+  --gap-xs: 0.5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 3rem;
+  --gap-xl: 4rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* RESET básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+body {
+  padding: var(--gap-lg) 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--amarelo-omax);
+  color: var(--texto-escuro);
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  margin-bottom: var(--gap-lg);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--gap-sm);
+}
+
+header .slogan {
+  font-weight: 300;
+  margin-bottom: var(--gap-md);
+}
+
+/* BOTÃO “SAIBA MAIS” */
+.btn-omax {
+  display: inline-block;
+  padding: var(--gap-sm) var(--gap-md);
+  background-color: var(--roxo-omax);
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: filter 0.2s ease;
+}
+
+.btn-omax:hover {
+  filter: brightness(1.1);
+}
+
+/* SEÇÕES */
+.sobre-omax,
+.canal-omax {
+  width: 75%;
+  max-width: 800px;
+  margin: 0 auto var(--gap-xl);
+  padding: var(--gap-xl) var(--gap-md);
+  background-color: var(--texto-claro);
+  color: var(--texto-escuro);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.sobre-omax h2,
+.canal-omax h2 {
+  font-size: 2rem;
+  margin-bottom: var(--gap-md);
+}
+
+.canal-omax h2 {
+  color: var(--roxo-omax);
+}
+
+.sobre-omax p,
+.canal-omax p {
+  line-height: 1.6;
+}
+
+/* Botão YouTube */
+.btn-youtube {
+  display: inline-block;
+  margin-top: var(--gap-md);
+  padding: var(--gap-sm) var(--gap-md);
+  background-color: #FF0000;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-youtube:hover {
+  background-color: #cc0000;
+}
+
+/* Menu de Navegação */
+.menu-omax ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-md);
+  list-style: none;
+  margin-bottom: var(--gap-md);
+  padding: 0;
+}
+
+.menu-omax a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--texto-escuro);
+  transition: color 0.2s ease;
+}
+
+.menu-omax a:hover {
+  color: var(--roxo-omax);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-omax ul {
+    flex-direction: column;
+    gap: var(--gap-sm);
+  }
+
+  .btn-omax {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Rodapé */
+.rodape-omax {
+  padding: var(--gap-md) 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+  margin-top: var(--gap-lg);
+  position: relative;
+}
+
+/* Ícone Krug */
+.krug-icon {
+  position: absolute;
+  right: var(--gap-md);
+  bottom: var(--gap-md);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.krug-icon:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+/* Modal de Inscrição */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 1000;
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background: var(--texto-claro);
+  padding: var(--gap-lg);
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content h2 {
+  margin-bottom: var(--gap-md);
+  color: var(--roxo-omax);
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.modal-content input[type="email"] {
+  padding: var(--gap-sm);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: var(--gap-sm) var(--gap-md);
+  background-color: var(--roxo-omax);
+  color: var(--texto-claro);
+  border: none;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.modal-content button:hover {
+  filter: brightness(1.1);
+}
+
+.close {
+  position: absolute;
+  top: var(--gap-sm);
+  right: var(--gap-sm);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Toast de Confirmação */
+#toast {
+  position: fixed;
+  bottom: var(--gap-md);
+  right: var(--gap-md);
+  background: var(--roxo-omax);
+  color: var(--texto-claro);
+  padding: var(--gap-sm) var(--gap-md);
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 1100;
+}
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Texto legal discreto no rodapé */
+.rodape-omax .legals {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.6;
+  margin-bottom: var(--gap-sm);
+  line-height: 1.4;
+}
+
+.rodape-omax .legals a {
+  color: var(--texto-escuro);
+  text-decoration: none;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.rodape-omax .legals a:hover {
+  opacity: 1;
+}

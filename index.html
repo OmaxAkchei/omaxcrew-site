@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OMAX — Em Breve</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="menu-omax">
+    <ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#canal-omax">Canal</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header>
+    <h1>OMAX</h1>
+    <p class="slogan">Criatividade com Propósito</p>
+    <a href="#sobre" class="btn-omax">Saiba Mais</a>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <section id="sobre" class="sobre-omax">
+      <h2>Sobre o OMAX</h2>
+      <p>
+        OMAX nasce da combinação perfeita entre criatividade e tecnologia.
+        Nossa missão é transformar ideias em experiências visuais de impacto.
+      </p>
+    </section>
+
+    <section id="canal-omax" class="canal-omax">
+      <h2>O Canal OMAX</h2>
+      <p>
+        Chega de vídeos eternos que só técnicos entendem. No canal OMAX,
+        cada vídeo tem cerca de 5 minutos — tempo suficiente para te mostrar
+        <strong>o que comprar, por que é a melhor escolha e onde encontrar</strong>.
+      </p>
+      <a
+        href="https://www.youtube.com/channel/UCtGxaFIlTZkXn7LuaQRCKjA"
+        target="_blank"
+        class="btn-youtube"
+      >
+        Ver Canal no YouTube
+      </a>
+    </section>
+  </main>
+  <!-- Seção Contato -->
+  <section id="contato" class="contato-omax">
+  <h2>Contato</h2>
+  <p>
+    Fale conosco diretamente no WhatsApp Business:
+    <a
+      href="https://wa.me/5521987610546?text=Ol%C3%A1%20OMAX%20Akchei%21"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-link"
+    >
+      +55 (21) 98761-0546
+    </a>
+  </p>
+</section>
+
+  <footer class="rodape-omax">
+  <p class="legals">
+  Criação Oswaldo Travassos — Todos os direitos reservados.
+  • <a href="legal/termos.html">Termos de Uso</a>
+  • <a href="legal/privacidade.html">Política de Privacidade</a>
+</p>
+  <a href="#inscricao-modal" class="krug-icon" title="Inscreva-se">🥂</a>
+</footer>
+
+
+  <!-- MODAL DE INSCRIÇÃO -->
+  <div id="inscricao-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Assine o Canal OMAX</h2>
+      <form id="form-inscricao">
+        <input
+          type="email"
+          id="email"
+          placeholder="Seu melhor e-mail"
+          required
+        />
+        <button type="submit">Inscrever-se</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST DE CONFIRMAÇÃO -->
+  <div id="toast">Obrigado por se inscrever!</div>
+
+  <!-- SCRIPT DE FUNCIONALIDADES -->
+  <script>
+    const krugIcon = document.querySelector('.krug-icon');
+    const modal     = document.getElementById('inscricao-modal');
+    const closeBtn  = modal.querySelector('.close');
+    const form      = document.getElementById('form-inscricao');
+    const toast     = document.getElementById('toast');
+
+    // Abre o modal ao clicar na taça
+    krugIcon.addEventListener('click', e => {
+      e.preventDefault();
+      modal.classList.add('active');
+    });
+
+    // Fecha o modal com o “×” ou clicando fora
+    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    modal.addEventListener('click', e => {
+      if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // Envia e exibe o toast, depois limpa o form
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      modal.classList.remove('active');
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 3000);
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
